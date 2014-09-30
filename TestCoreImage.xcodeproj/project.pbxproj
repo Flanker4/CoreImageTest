@@ -14,6 +14,8 @@
 		0EBFDF6219DAC3DC008C9D38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EBFDF6119DAC3DC008C9D38 /* Images.xcassets */; };
 		0EBFDF6519DAC3DC008C9D38 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBFDF6319DAC3DC008C9D38 /* LaunchScreen.xib */; };
 		0EBFDF7119DAC3DC008C9D38 /* TestCoreImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFDF7019DAC3DC008C9D38 /* TestCoreImageTests.m */; };
+		0EBFDF7E19DAC907008C9D38 /* FilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFDF7D19DAC907008C9D38 /* FilterManager.m */; };
+		0EBFDF8019DAC9A5008C9D38 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBFDF7F19DAC9A4008C9D38 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		0EBFDF6A19DAC3DC008C9D38 /* TestCoreImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCoreImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBFDF6F19DAC3DC008C9D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EBFDF7019DAC3DC008C9D38 /* TestCoreImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCoreImageTests.m; sourceTree = "<group>"; };
+		0EBFDF7C19DAC907008C9D38 /* FilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterManager.h; sourceTree = "<group>"; };
+		0EBFDF7D19DAC907008C9D38 /* FilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterManager.m; sourceTree = "<group>"; };
+		0EBFDF7F19DAC9A4008C9D38 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EBFDF8019DAC9A5008C9D38 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		0EBFDF4819DAC3DB008C9D38 = {
 			isa = PBXGroup;
 			children = (
+				0EBFDF7F19DAC9A4008C9D38 /* CoreImage.framework */,
 				0EBFDF5319DAC3DB008C9D38 /* TestCoreImage */,
 				0EBFDF6D19DAC3DC008C9D38 /* TestCoreImageTests */,
 				0EBFDF5219DAC3DB008C9D38 /* Products */,
@@ -85,6 +92,8 @@
 				0EBFDF5919DAC3DC008C9D38 /* AppDelegate.m */,
 				0EBFDF5B19DAC3DC008C9D38 /* ViewController.h */,
 				0EBFDF5C19DAC3DC008C9D38 /* ViewController.m */,
+				0EBFDF7C19DAC907008C9D38 /* FilterManager.h */,
+				0EBFDF7D19DAC907008C9D38 /* FilterManager.m */,
 				0EBFDF5E19DAC3DC008C9D38 /* Main.storyboard */,
 				0EBFDF6119DAC3DC008C9D38 /* Images.xcassets */,
 				0EBFDF6319DAC3DC008C9D38 /* LaunchScreen.xib */,
@@ -222,6 +231,7 @@
 				0EBFDF5D19DAC3DC008C9D38 /* ViewController.m in Sources */,
 				0EBFDF5A19DAC3DC008C9D38 /* AppDelegate.m in Sources */,
 				0EBFDF5719DAC3DC008C9D38 /* main.m in Sources */,
+				0EBFDF7E19DAC907008C9D38 /* FilterManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

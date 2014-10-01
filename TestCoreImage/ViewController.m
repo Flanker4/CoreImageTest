@@ -18,7 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.imageView.image = [[FilterManager sharedFilterManager] applyFilterWithName:@"crop" toImage:self.imageView.highlightedImage];
+    CGRect rect = CGRectMake(0, 0, 100, 300);
+    NSValue *val = [NSValue valueWithCGRect:rect];
+    self.imageView.image = [[FilterManager sharedFilterManager] applyFilterWithName:@"crop" param:@{kInputParamRect:val} toImage:self.imageView.highlightedImage];
    
 }
 

@@ -9,6 +9,7 @@
 #import "FilterManager.h"
 @import CoreImage;
 
+NSString * const kInputParamRect = @"inputRectangle";
 
 @implementation FilterManager
 +(instancetype)sharedFilterManager{
@@ -22,18 +23,25 @@
 
 #pragma mark - Public
 -(UIImage*)applyFilterWithName:(NSString*)name toImage:(UIImage*)image{
-    CIFilter *filter =  [self filterWithName:name];
-    return [self applyFilter:filter toImage:image];
+    return [self applyFilterWithName:name param:nil toImage:image];
 }
 
+-(UIImage*)applyFilterWithName:(NSString*)name param:(NSDictionary*)dict toImage:(UIImage*)image{
+    CIFilter *filter =  [self filterWithName:name params:dict];
+    return [self applyFilter:filter toImage:image];
+    
+}
+
+
 #pragma mark - Private
--(CIFilter*) filterWithName:(NSString*)name{
+-(CIFilter*) filterWithName:(NSString*)name params:(NSDictionary*)dict{
     name = name.lowercaseString;
     CIFilter *filter = nil;
     if ([name isEqualToString:@"crop"]) {
         filter = [CIFilter filterWithName:@"CICrop"];
-        CIVector *cropRect =[CIVector vectorWithX:0 Y:0 Z: 100 W: 300];
-        [filter setValue:cropRect forKey:@"inputRectangle"/*kCIAttributeTypeRectangle*/];
+        CGRect rect = [dict[kInputParamRect] CGRectValue];
+        CIVector *cropRect =[CIVector vectorWithX:rect.origin.x Y:rect.origin.y Z:rect.size.width W: rect.size.height];
+        [filter setValue:cropRect forKey:kInputParamRect];
     }
     return filter;
 }

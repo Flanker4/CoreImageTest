@@ -47,6 +47,7 @@ NSString * const kInputParamRect = @"inputRectangle";
 }
 
 -(CIImage*) applyFilter:(CIFilter*)filter toCIImage:(CIImage*)inputImage{
+    
     [filter setValue:inputImage forKey:kCIInputImageKey];
     return filter.outputImage;
 }

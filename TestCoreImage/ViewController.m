@@ -62,7 +62,7 @@
 
 #pragma mark - UIImagePicker Delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.originalImage = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
@@ -138,7 +138,7 @@
         
         UIImagePickerController *picker = [UIImagePickerController new];
         picker.delegate = self;
-        picker.allowsEditing = NO;
+        picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
         [self presentViewController:picker animated:YES completion:NULL];

@@ -22,6 +22,11 @@ NSString * const kInputParamRect = @"inputRectangle";
 }
 
 #pragma mark - Public
+-(NSArray*)allFilterNames{
+    return [CIFilter filterNamesInCategory:kCICategoryColorEffect];
+   
+}
+
 -(UIImage*)applyFilterWithName:(NSString*)name toImage:(UIImage*)image{
     return [self applyFilterWithName:name param:nil toImage:image];
 }
@@ -35,14 +40,8 @@ NSString * const kInputParamRect = @"inputRectangle";
 
 #pragma mark - Private
 -(CIFilter*) filterWithName:(NSString*)name params:(NSDictionary*)dict{
-    name = name.lowercaseString;
-    CIFilter *filter = nil;
-    if ([name isEqualToString:@"crop"]) {
-        filter = [CIFilter filterWithName:@"CICrop"];
-        CGRect rect = [dict[kInputParamRect] CGRectValue];
-        CIVector *cropRect =[CIVector vectorWithX:rect.origin.x Y:rect.origin.y Z:rect.size.width W: rect.size.height];
-        [filter setValue:cropRect forKey:kInputParamRect];
-    }
+    CIFilter *filter = [CIFilter filterWithName:name];
+    //TODO: params
     return filter;
 }
 

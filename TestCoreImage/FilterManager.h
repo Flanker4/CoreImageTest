@@ -16,7 +16,7 @@ extern NSString * const kInputParamRect;
 
 @interface FilterManager : NSObject
 +(instancetype)sharedFilterManager;
-
+-(NSArray*)allFilterNames;
 -(UIImage*)applyFilterWithName:(NSString*)name toImage:(UIImage*)image;
 -(UIImage*)applyFilterWithName:(NSString*)name param:(NSDictionary*)dict toImage:(UIImage*)image;
 @end
